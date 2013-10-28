@@ -1,0 +1,189 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/container"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/background2"
+    tools:context=".MainActivity"
+    tools:ignore="MergeRootFrame" >
+
+    <TextView
+        android:id="@+id/nameView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:text="--"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:textSize="@dimen/title_Jam" />
+
+    <TextView
+        android:id="@+id/emailView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/textView1"
+        android:layout_below="@+id/textView1"
+        android:text="--"
+        android:textAppearance="?android:attr/textAppearanceLarge" />
+
+    <TextView
+        android:id="@+id/textView3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignTop="@+id/profilePic"
+        android:layout_marginLeft="34dp"
+        android:layout_toRightOf="@+id/profilePic"
+        android:text="Last Login Location:"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:textSize="@dimen/title_data" />
+
+    <TextView
+        android:id="@+id/latitudeView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/textView3"
+        android:layout_below="@+id/textView3"
+        android:maxLength="8"
+        android:text="--"
+        android:textAppearance="?android:attr/textAppearanceLarge" />
+
+    <TextView
+        android:id="@+id/longitudeView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/latitudeView"
+        android:layout_below="@+id/latitudeView"
+        android:maxLength="8"
+        android:text="--"
+        android:textAppearance="?android:attr/textAppearanceLarge" />
+
+    <TableLayout
+        android:id="@+id/tableLayout1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/lblNearby"
+        android:layout_marginTop="54dp"
+        android:layout_toRightOf="@+id/instrumentView" >
+
+        <TableRow
+            android:id="@+id/tableRow1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" >
+        </TableRow>
+
+        <TableRow
+            android:id="@+id/tableRow2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" >
+        </TableRow>
+
+        <TableRow
+            android:id="@+id/tableRow3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" >
+        </TableRow>
+
+        <TableRow
+            android:id="@+id/tableRow4"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" >
+        </TableRow>
+    </TableLayout>
+
+    <ListView
+        android:id="@+id/profilesListView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/lblNearby"
+        android:layout_below="@+id/lblNearby"
+        android:layout_marginTop="19dp" >
+    </ListView>
+
+    <ImageView
+        android:id="@+id/profilePic"
+        android:layout_width="@dimen/pic_width"
+        android:layout_height="@dimen/pic_height"
+        android:layout_alignParentLeft="true"
+        android:layout_below="@+id/nameView"
+        android:layout_marginLeft="10dp"
+        android:minHeight="100dp"
+        android:minWidth="50dp" />
+
+    <Button
+        android:id="@+id/btnPicture"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/profilePic"
+        android:layout_below="@+id/profilePic"
+        android:onClick="takePicture"
+        android:text="Take Picture" 
+        android:textSize="@dimen/button_text_size"/>
+
+    <TextView
+        android:id="@+id/textView1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/btnPicture"
+        android:layout_below="@+id/btnPicture"
+        android:layout_marginTop="18dp"
+        android:text="Email:"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:textSize="@dimen/title_data" />
+
+    <TextView
+        android:id="@+id/textView2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/emailView"
+        android:layout_below="@+id/emailView"
+        android:text="Instrument:"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:textSize="@dimen/title_data" />
+
+    <TextView
+        android:id="@+id/instrumentView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/textView2"
+        android:layout_below="@+id/textView2"
+        android:text="--"
+        android:textAppearance="?android:attr/textAppearanceLarge" />
+
+    <TextView
+        android:id="@+id/lblNearby"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/instrumentView"
+        android:layout_below="@+id/instrumentView"
+        android:text="Nearby Musicians:"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:textSize="@dimen/title_data" />
+
+    <Button
+        android:id="@+id/btnPlay2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/longitudeView"
+        android:layout_centerHorizontal="true"
+        android:text="Play Status"
+        android:textSize="@dimen/button_text_size" />
+
+    <ProgressBar
+        android:id="@+id/progressBar1"
+        style="?android:attr/progressBarStyleHorizontal"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/btnPlay2"
+        android:layout_alignRight="@+id/btnRecord"
+        android:layout_below="@+id/btnPlay2" />
+
+    <Button
+        android:id="@+id/btnRecord"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/progressBar1"
+        android:layout_toRightOf="@+id/btnPlay2"
+        android:text="Record Status"
+        android:textSize="@dimen/button_text_size" />
+
+</RelativeLayout>

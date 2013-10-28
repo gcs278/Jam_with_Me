@@ -1,0 +1,99 @@
+Jam with Me Server API
+
+Path: /login
+NOTES: Used for authenicating user with database. **Only email is used,
+password does not matter**
+	HTTP POST
+		Parameters:
+			query:
+				N/A
+			data:
+				type:
+					JSON (String)
+				required fields:
+					username, password,
+					latitude, longitude 
+		Response:
+			if authenitcated:
+				"OK"
+			if not authenticated:
+				"FAIL"
+	HTTP GET
+		Query:
+			NONE
+		Response (not used):
+			"Jam with me login servlet"
+			
+Path: /profile
+NOTES: Used to update and retrieve user's profiles
+	HTTP POST
+	NOTES: Not used. Future use: update profile information
+		Parameters:
+			query:
+				?email=[email/username]
+			data:
+				See note
+		Response:
+			See note
+	HTTP GET
+		Query:
+			?email=[email/username]
+			
+			&type=(profile|users)
+		Response:
+			if type == profile:
+				returns corresponding user's profile
+				data type:
+					JSON
+				fields:
+					name, instrument, latitude, longitude				
+			if type == users:
+				returns list of users
+				data type:
+					JSON
+				fields:
+					users (JSON array)
+
+Path: /uploadpic
+NOTES: Used to upload and retrieve user's profile pics
+	HTTP POST
+		Parameters:
+			query:
+				?email=[email/username]
+			data:
+				(binary jpeg image encoded in base64)
+		Response:
+			if upload successful:
+				"OK"
+			if upload fail:
+				"FAIL"
+	HTTP GET
+		Query:
+			?email=[email/username]
+		Response:
+			if picture exists:
+				(base64 string of jpeg image)
+			else:
+				[ERROR]
+			
+Path: /register
+NOTES: Used to register a user
+	HTTP POST
+		Parameters:
+			Query:
+				N/A
+			Data:
+				Type:
+					JSON
+				Required Fields:
+					username, name, password, instrument
+		Response:
+			if register successful:
+				"SUCCESS"
+			else: 
+				"FAIL"
+	HTTP GET
+		N/A
+
+		
+				

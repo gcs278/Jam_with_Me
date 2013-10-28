@@ -1,0 +1,23 @@
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android" >
+
+    <!-- NOTE: EditTextPreference accepts EditText attributes. -->
+    <!-- NOTE: EditTextPreference's summary should be set to its value by the activity code. -->
+    <EditTextPreference
+        android:defaultValue="grantspence.com"
+        android:inputType="textCapWords"
+        android:key="@string/pref_key_url"
+        android:maxLines="1"
+        android:selectAllOnFocus="true"
+        android:singleLine="true"
+        android:title="URL" />
+    
+    <EditTextPreference
+        android:defaultValue="8888"
+        android:inputType="number"
+        android:key="@string/pref_key_port"
+        android:maxLines="1"
+        android:selectAllOnFocus="true"
+        android:singleLine="true"
+        android:title="Port Number" />
+
+</PreferenceScreen>
